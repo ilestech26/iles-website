@@ -10,21 +10,37 @@ opening `index.html`, and deploys as-is to GitHub Pages at **zero recurring cost
 
 ## File structure
 
+Everything sits in **one flat folder — no subfolders**. This is deliberate: GitHub's
+browser upload doesn't reliably preserve nested folders when you drag files in, so a
+flat layout means there's nothing for an upload to lose.
+
 ```
 iles-website/
-├── index.html                # Landing page — hero, about, services overview,
-│                              #   safety banner, fleet table, calculator + quote form
-├── services.html              # Detailed service specs (all 8 service lines)
-├── assets/
-│   ├── css/custom.css         # Brand tokens, gauge animation, section styling
-│   ├── js/main.js             # Mobile nav, form validation + Web3Forms submit,
-│   │                          #   load calculator, brochure download, scroll reveal
-│   ├── img/                   # Logo + brochure photography
-│   └── brochure/
-│       └── ILES-Company-Brochure.pdf   # Downloadable brochure (linked in nav/footer)
-├── CNAME                      # Your custom domain goes here (see Part 2 below)
-└── README.md                  # You are here
+├── index.html                    # Landing page
+├── services.html                 # Detailed service specs (all 8 service lines)
+├── custom.css                    # Brand tokens, gauge animation, section styling
+├── main.js                       # Mobile nav, form validation + Web3Forms submit,
+│                                  #   load calculator, brochure download, scroll reveal
+├── iles-logo.png                 # Logo (header, footer, browser-tab icon)
+├── warehouse-overhead-crane.jpg  # Brochure photography
+├── worker-spraying.jpg
+├── load-testing-dock.jpg
+├── inspection-crane-structure.jpg
+├── offshore-load-test.jpg
+├── industrial-pipes.jpg
+├── ndt-device.jpg
+├── forklift-warehouse.jpg
+├── telehandler-containers.jpg
+├── overhead-crane-hoists.jpg
+├── scissor-lift.jpg
+├── ILES-Company-Brochure.pdf     # Downloadable brochure (linked in nav/footer)
+├── CNAME                         # Your custom domain goes here (see Part 3 below)
+└── README.md                     # You are here
 ```
+
+When you upload to GitHub (Part 2, Step 3), select **all of these files at once**
+and drag them in together — since there are no folders involved, there's nothing
+that can get flattened or dropped along the way.
 
 ## Running it locally
 
@@ -107,12 +123,16 @@ You don't need to touch a terminal to do this. Pick whichever feels easiest:
 **Option A — Drag and drop in the browser (simplest, no installs at all)**
 1. On your new repository's page, click **uploading an existing file** (or
    **Add file → Upload files** from the top-right menu).
-2. Open the `iles-website` folder on your computer in a separate window, select
-   *everything inside it* (`index.html`, `services.html`, the `assets` folder,
-   `CNAME`, `README.md`) and drag it all into the GitHub upload box.
-   - Important: drag the **contents** of the folder, not the folder itself —
-     `index.html` needs to sit at the top level of the repository, not inside an
-     `iles-website/iles-website/` subfolder.
+2. Open the `iles-website` folder on your computer, press **Ctrl/Cmd+A** to
+   select *all* the files in it (every `.html`, `.css`, `.js`, `.jpg`, `.png`,
+   `.pdf`, plus `CNAME` and `README.md`), and drag them all into the GitHub
+   upload box in one go.
+   - There are no subfolders in this project, so there's nothing to flatten or
+     lose — every file should land directly at the top level of the repository.
+   - Double-check the count before committing: this project has around 17
+     files. If your repository ends up with far fewer than that after
+     uploading, some files didn't make it — repeat the upload for the missing
+     ones (see the "If something's still missing" note below).
 3. Scroll down, add a commit message like "Initial upload", and click
    **Commit changes**.
 4. That's it — the files are live in your repository, ready for Step 4 below.
@@ -136,6 +156,12 @@ git branch -M main
 git remote add origin https://github.com/<your-username>/iles-website.git
 git push -u origin main
 ```
+
+**If something's still missing after uploading:** open your repository on
+GitHub.com and count the files listed. This project has 17 files total, all at
+the top level (no folders). If you see noticeably fewer, some didn't upload —
+just repeat **Add file → Upload files** and drag in whatever's missing; GitHub
+adds to what's already there, it doesn't require starting over.
 
 ### Step 4 — Turn on GitHub Pages
 1. On your repository page, go to **Settings → Pages** (left sidebar).
