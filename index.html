@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ILES — Integrity Lifting &amp; Engineering Solutions | Heavy Lifting, Rigging &amp; Compliance, Ghana</title>
+<meta name="description" content="Integrity Lifting & Engineering Solutions (ILES) delivers crane rental, rigging, structural steel erection, load testing, inspection and preventive maintenance to industrial clients across West Africa.">
+
+<!-- Fonts: Oswald (display) / Inter (body) / IBM Plex Mono (specs & data) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Tailwind (CDN build) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          'navy-deep': '#0F2044',
+          'navy-mid': '#16305C',
+          orange: { DEFAULT: '#F4801F', dim: '#C8620F' },
+          signal: '#C8202F',
+          steel: { 100: '#F7F8FA', 200: '#ECEEF1' },
+          ink: '#10161F',
+          slate2: '#5B6472',
+        },
+        fontFamily: {
+          display: ['Oswald', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="font-body antialiased">
+
+<!-- =================== HEADER / NAV =================== -->
+<header class="sticky top-0 z-50 bg-navy-deep text-steel-100 shadow-lg shadow-navy-deep/20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-20">
+
+    <a href="index.html" class="flex items-center gap-3 group">
+      <img src="assets/img/iles-logo.png" alt="ILES — Integrity Lifting & Engineering Solutions logo" class="w-12 h-12 md:w-14 md:h-14 transition-transform duration-300 group-hover:rotate-[8deg]">
+      <span class="font-display font-semibold tracking-wide leading-tight">
+        <span class="block text-base md:text-lg">INTEGRITY LIFTING</span>
+        <span class="block text-[10px] md:text-xs text-orange tracking-[0.2em]">&amp; ENGINEERING SOLUTIONS</span>
+      </span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-sm">
+      <a href="index.html#home" class="nav-link active">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="index.html#safety" class="nav-link">Safety Record</a>
+      <a href="index.html#fleet" class="nav-link">Fleet / Equipment</a>
+      <a href="assets/brochure/ILES-Company-Brochure.pdf" download class="nav-link brochure-download">Digital Brochure</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="index.html#quote" class="hidden md:inline-flex items-center gap-2 bg-orange hover:bg-orange-dim transition-colors text-navy-deep font-display font-semibold text-sm tracking-wide px-5 py-2.5 rounded">
+        Request a Lift Plan / Quote
+      </a>
+      <!-- Mobile menu button -->
+      <button id="menuToggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu" class="lg:hidden p-2 -mr-2">
+        <svg class="icon-open w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon-close hidden w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav id="mobile-menu" class="lg:hidden bg-navy-mid px-5">
+    <div class="flex flex-col py-4 gap-4 font-medium text-sm">
+      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="index.html#safety" class="nav-link">Safety Record</a>
+      <a href="index.html#fleet" class="nav-link">Fleet / Equipment</a>
+      <a href="assets/brochure/ILES-Company-Brochure.pdf" download class="nav-link brochure-download">Digital Brochure</a>
+      <a href="index.html#quote" class="inline-flex justify-center items-center gap-2 bg-orange text-navy-deep font-display font-semibold px-5 py-2.5 rounded mt-1">Request a Lift Plan / Quote</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- =================== HERO =================== -->
+<section id="home" class="relative bg-navy-deep text-steel-100 overflow-hidden">
+  <div class="hero-photo" aria-hidden="true">
+    <img src="assets/img/warehouse-overhead-crane.jpg" alt="">
+  </div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-14 pb-24 md:pt-20 md:pb-32 grid lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center relative z-10">
+
+    <div>
+      <p class="inline-flex items-center gap-2 text-orange font-mono-data text-xs tracking-[0.2em] uppercase mb-5">
+        <span class="w-2 h-2 rounded-full bg-orange"></span>
+        Certified &middot; Compliant &middot; West Africa
+      </p>
+      <h1 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl leading-[1.05] mb-6">
+        Heavy lifts,<br> handled with <span class="text-orange">integrity.</span>
+      </h1>
+      <p class="text-steel-200/90 text-base md:text-lg max-w-xl mb-9 leading-relaxed">
+        ILES provides integrated engineering, inspection, testing, training and energy
+        services to industrial clients across West Africa &mdash; backed by certified
+        operators, statutory-standard inspections, and heavy-capacity crane capability.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="index.html#quote" class="inline-flex items-center gap-2 bg-orange hover:bg-orange-dim transition-colors text-navy-deep font-display font-semibold px-7 py-3.5 rounded">
+          Request a Lift Plan / Quote
+        </a>
+        <a href="services.html" class="inline-flex items-center gap-2 border border-steel-100/30 hover:border-orange hover:text-orange transition-colors font-display font-semibold px-7 py-3.5 rounded">
+          View Our Services
+        </a>
+      </div>
+    </div>
+
+    <!-- Signature element: animated Safe Working Load gauge -->
+    <div class="flex justify-center lg:justify-end">
+      <figure class="swl-gauge bg-navy-deep/60 backdrop-blur-sm border border-steel-100/10 rounded-2xl px-8 pt-8 pb-6" role="img" aria-label="Illustrative Safe Working Load gauge, needle resting in the certified operating zone">
+        <svg width="280" height="200" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 150 A120 120 0 0 1 260 150" fill="none" stroke="#16305C" stroke-width="26"/>
+          <path d="M20 150 A120 120 0 0 1 108 34" fill="none" stroke="#2E7D4F" stroke-width="26" stroke-linecap="butt"/>
+          <path d="M108 34 A120 120 0 0 1 190 34" fill="none" stroke="#F4801F" stroke-width="26"/>
+          <path d="M190 34 A120 120 0 0 1 260 150" fill="none" stroke="#C8202F" stroke-width="26"/>
+          <g class="swl-tick">
+            <line x1="20" y1="150" x2="34" y2="150"/>
+            <line x1="140" y1="20" x2="140" y2="34"/>
+            <line x1="260" y1="150" x2="246" y2="150"/>
+          </g>
+          <line class="swl-needle" x1="140" y1="150" x2="140" y2="46" stroke="#F7F8FA" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="140" cy="150" r="9" fill="#F7F8FA"/>
+          <circle cx="140" cy="150" r="4" fill="#0F2044"/>
+        </svg>
+        <figcaption class="text-center -mt-2">
+          <span class="swl-readout block font-mono-data text-2xl font-semibold text-orange">SWL VERIFIED</span>
+          <span class="block text-xs text-steel-200/70 tracking-wide mt-1">Every lift confirmed against a certified load chart</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- diagonal transition -->
+  <div class="absolute -bottom-1 left-0 right-0 h-16 bg-steel-100 diag-cut-t"></div>
+</section>
+
+<!-- =================== STAT / SAFETY STRIP =================== -->
+<section class="bg-steel-100 pt-4 pb-16 md:pb-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="reveal text-center border-l-4 border-orange pl-4">
+      <span class="block font-display font-bold text-3xl md:text-4xl text-navy-deep">100%</span>
+      <span class="block text-xs md:text-sm text-slate2 mt-1">Statutory inspection compliance</span>
+    </div>
+    <div class="reveal text-center border-l-4 border-orange pl-4">
+      <span class="block font-display font-bold text-3xl md:text-4xl text-navy-deep">4</span>
+      <span class="block text-xs md:text-sm text-slate2 mt-1">NDT methods on offer &mdash; MPI, DPT, UT, VT</span>
+    </div>
+    <div class="reveal text-center border-l-4 border-orange pl-4">
+      <span class="block font-display font-bold text-3xl md:text-4xl text-navy-deep">6</span>
+      <span class="block text-xs md:text-sm text-slate2 mt-1">Certified training course tracks</span>
+    </div>
+    <div class="reveal text-center border-l-4 border-orange pl-4">
+      <span class="block font-display font-bold text-3xl md:text-4xl text-navy-deep">West Africa</span>
+      <span class="block text-xs md:text-sm text-slate2 mt-1">Oil &amp; gas, mining, marine &amp; industrial clients</span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section id="about" class="bg-white py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <p class="text-orange font-mono-data text-xs tracking-[0.2em] uppercase mb-3">About ILES</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-navy-deep mb-5">
+        Integrated engineering, built on compliance.
+      </h2>
+      <p class="text-slate2 leading-relaxed mb-4">
+        Integrity Lifting &amp; Engineering Solutions Ltd (ILES) provides integrated engineering,
+        inspection, testing, training, and energy services to industrial clients across West Africa.
+      </p>
+      <p class="text-slate2 leading-relaxed mb-8">
+        Our business portfolio is structured to support safe operations, regulatory compliance,
+        and asset reliability across multiple sectors &mdash; from oil &amp; gas to mining.
+      </p>
+      <blockquote class="border-l-4 border-navy-deep bg-steel-100 px-6 py-5 font-display text-lg text-navy-deep">
+        &ldquo;Our mission is to deliver cost-effective, high-quality, and transparent
+        compliance solutions across diverse markets.&rdquo;
+      </blockquote>
+    </div>
+
+    <div class="reveal">
+      <div class="img-frame rounded-lg shadow-lg aspect-[4/3]">
+        <img src="assets/img/worker-spraying.jpg" alt="ILES field technician in certified PPE marking equipment during an inspection" loading="lazy">
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-5">
+        <div class="spec-card p-5 rounded shadow-sm">
+          <h3 class="font-display font-semibold text-navy-deep text-sm mb-1">Inspection</h3>
+          <p class="text-xs text-slate2">Lifting equipment, crane, hoist, forklift &amp; plant inspections.</p>
+        </div>
+        <div class="spec-card p-5 rounded shadow-sm">
+          <h3 class="font-display font-semibold text-navy-deep text-sm mb-1">Testing</h3>
+          <p class="text-xs text-slate2">Mechanical, pressure &amp; non-destructive testing.</p>
+        </div>
+        <div class="spec-card p-5 rounded shadow-sm">
+          <h3 class="font-display font-semibold text-navy-deep text-sm mb-1">Training</h3>
+          <p class="text-xs text-slate2">LOLER, crane, plant &amp; access equipment training.</p>
+        </div>
+        <div class="spec-card p-5 rounded shadow-sm">
+          <h3 class="font-display font-semibold text-navy-deep text-sm mb-1">Renewable Energy</h3>
+          <p class="text-xs text-slate2">Solar solutions for every sector.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SERVICES OVERVIEW =================== -->
+<section id="services" class="bg-steel-100 py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="reveal max-w-2xl mb-14">
+      <p class="text-orange font-mono-data text-xs tracking-[0.2em] uppercase mb-3">Core Services</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-navy-deep mb-4">Heavy lifting &amp; engineering, end to end.</h2>
+      <p class="text-slate2 leading-relaxed">From crane mobilisation to the certification paperwork, one accountable team runs the whole lift.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="reveal spec-card rounded overflow-hidden">
+        <div class="img-frame aspect-[16/10]">
+          <img src="assets/img/warehouse-overhead-crane.jpg" alt="Overhead crane hoist system installed in an industrial warehouse" loading="lazy">
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-semibold text-lg text-navy-deep mb-2">Crane Rental</h3>
+          <p class="text-sm text-slate2 mb-4">Hydraulic and crawler crane hire with certified operators, matched to your working radius and load.</p>
+          <span class="font-mono-data text-xs text-orange-dim">Up to 250 t class</span>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="reveal delay-1 spec-card rounded overflow-hidden">
+        <div class="img-frame aspect-[16/10]">
+          <img src="assets/img/load-testing-dock.jpg" alt="Riggers guiding a load bag during a dockside lift" loading="lazy">
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-semibold text-lg text-navy-deep mb-2">Rigging</h3>
+          <p class="text-sm text-slate2 mb-4">Rigging design and execution using certified slings, shackles and spreader-bar arrangements.</p>
+          <span class="font-mono-data text-xs text-orange-dim">Engineered rigging plans</span>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="reveal delay-2 spec-card rounded overflow-hidden">
+        <div class="img-frame aspect-[16/10]">
+          <img src="assets/img/inspection-crane-structure.jpg" alt="Technician working on an elevated crane structure against the sky" loading="lazy">
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-semibold text-lg text-navy-deep mb-2">Structural Steel Erection</h3>
+          <p class="text-sm text-slate2 mb-4">Framework, module and vessel erection sequencing, planned around statutory site safety.</p>
+          <span class="font-mono-data text-xs text-orange-dim">Sequenced lift plans</span>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="reveal delay-3 spec-card rounded overflow-hidden">
+        <div class="img-frame aspect-[16/10]">
+          <img src="assets/img/offshore-load-test.jpg" alt="Load bag suspended over water during an offshore proof test" loading="lazy">
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-semibold text-lg text-navy-deep mb-2">Load Testing</h3>
+          <p class="text-sm text-slate2 mb-4">Proof and load testing, hydrostatic &amp; pneumatic pressure testing, with full test certification.</p>
+          <span class="font-mono-data text-xs text-orange-dim">Certified test reports</span>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="reveal delay-4 spec-card rounded overflow-hidden">
+        <div class="img-frame aspect-[16/10]">
+          <img src="assets/img/industrial-pipes.jpg" alt="Industrial piping and vessels on a process plant" loading="lazy">
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-semibold text-lg text-navy-deep mb-2">Preventive Maintenance</h3>
+          <p class="text-sm text-slate2 mb-4">Scheduled inspection and maintenance programmes that keep lifting assets reliable and compliant.</p>
+          <span class="font-mono-data text-xs text-orange-dim">Asset register &amp; reporting</span>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="reveal delay-5 spec-card rounded overflow-hidden">
+        <div class="img-frame aspect-[16/10]">
+          <img src="assets/img/ndt-device.jpg" alt="Handheld ultrasonic testing device used for non-destructive testing" loading="lazy">
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-semibold text-lg text-navy-deep mb-2">Training &amp; NDT</h3>
+          <p class="text-sm text-slate2 mb-4">LOLER, crane &amp; access-equipment training, plus MPI, DPT, UT and VT non-destructive testing.</p>
+          <span class="font-mono-data text-xs text-orange-dim">Certified course tracks</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal text-center mt-12">
+      <a href="services.html" class="inline-flex items-center gap-2 border-2 border-navy-deep hover:bg-navy-deep hover:text-white transition-colors font-display font-semibold px-7 py-3 rounded text-navy-deep">
+        See full service specifications
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SAFETY & COMPLIANCE BANNER =================== -->
+<section id="safety" class="relative bg-navy-deep text-steel-100 py-20 md:py-24 overflow-hidden">
+  <div class="hazard-rule absolute top-0 left-0 right-0"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-[1fr_1.1fr] gap-14 items-center">
+    <div class="reveal">
+      <p class="text-orange font-mono-data text-xs tracking-[0.2em] uppercase mb-3">Safety &amp; Compliance</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl mb-5">Compliance isn&rsquo;t a checkbox &mdash; it&rsquo;s the product.</h2>
+      <p class="text-steel-200/80 leading-relaxed mb-8">
+        Every inspection, test and lift is run against international statutory standards,
+        with certified rigging gear, a maintained asset register, and a client-facing
+        inspection database that keeps your compliance record audit-ready.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <span class="cert-badge px-4 py-2 rounded text-xs font-mono-data tracking-wide">LOLER COMPLIANT</span>
+        <span class="cert-badge px-4 py-2 rounded text-xs font-mono-data tracking-wide">ISO-ALIGNED QA</span>
+        <span class="cert-badge px-4 py-2 rounded text-xs font-mono-data tracking-wide">STATUTORY INSPECTIONS</span>
+        <span class="cert-badge px-4 py-2 rounded text-xs font-mono-data tracking-wide">CERTIFIED RIGGING GEAR</span>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="img-frame rounded-lg shadow-lg aspect-[4/3] relative">
+        <img src="assets/img/offshore-load-test.jpg" alt="A load bag under proof test, suspended over water during an offshore compliance check" loading="lazy">
+        <div class="photo-caption">
+          <span class="font-mono-data text-xs text-orange tracking-wide">PROOF TEST IN PROGRESS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-2 lg:grid-cols-4 gap-5 mt-14 relative z-10">
+    <div class="reveal bg-navy-mid rounded p-6 border-t-4 border-orange">
+      <span class="block font-display font-bold text-3xl">4</span>
+      <span class="block text-sm text-steel-200/70 mt-1">NDT disciplines: MPI &middot; DPT &middot; UT &middot; VT</span>
+    </div>
+    <div class="reveal delay-1 bg-navy-mid rounded p-6 border-t-4 border-orange">
+      <span class="block font-display font-bold text-3xl">2</span>
+      <span class="block text-sm text-steel-200/70 mt-1">Pressure test methods: hydrostatic &amp; pneumatic</span>
+    </div>
+    <div class="reveal delay-2 bg-navy-mid rounded p-6 border-t-4 border-orange">
+      <span class="block font-display font-bold text-3xl">100%</span>
+      <span class="block text-sm text-steel-200/70 mt-1">Test certification &amp; reporting on every job</span>
+    </div>
+    <div class="reveal delay-3 bg-navy-mid rounded p-6 border-t-4 border-orange">
+      <span class="block font-display font-bold text-3xl">Live</span>
+      <span class="block text-sm text-steel-200/70 mt-1">Digital asset register &amp; inspection reporting</span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FLEET / EQUIPMENT =================== -->
+<section id="fleet" class="bg-white py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="reveal max-w-2xl mb-12">
+      <p class="text-orange font-mono-data text-xs tracking-[0.2em] uppercase mb-3">Fleet &amp; Equipment</p>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-navy-deep mb-4">Matched to the load, not just available.</h2>
+      <p class="text-slate2 leading-relaxed">A representative snapshot of the equipment classes we mobilise &mdash; final selection is always confirmed against your certified lift plan.</p>
+    </div>
+
+    <div class="reveal img-frame rounded-lg shadow-lg aspect-[21/9] mb-10">
+      <img src="assets/img/warehouse-overhead-crane.jpg" alt="Overhead crane hoist installation spanning an industrial warehouse floor" loading="lazy">
+    </div>
+
+    <div class="overflow-x-auto reveal">
+      <table class="w-full text-left border-collapse min-w-[640px]">
+        <thead>
+          <tr class="border-b-2 border-navy-deep">
+            <th class="py-3 pr-4 font-display text-navy-deep text-sm tracking-wide">Equipment class</th>
+            <th class="py-3 pr-4 font-display text-navy-deep text-sm tracking-wide">Typical capacity</th>
+            <th class="py-3 pr-4 font-display text-navy-deep text-sm tracking-wide">Best suited to</th>
+          </tr>
+        </thead>
+        <tbody class="font-mono-data text-sm">
+          <tr class="border-b border-steel-200">
+            <td class="py-4 pr-4 font-body font-medium">Hydraulic mobile crane</td>
+            <td class="py-4 pr-4">20&ndash;100 t</td>
+            <td class="py-4 pr-4 font-body text-slate2">Yard lifts, short-notice mobilisation</td>
+          </tr>
+          <tr class="border-b border-steel-200">
+            <td class="py-4 pr-4 font-body font-medium">Crawler crane</td>
+            <td class="py-4 pr-4">100&ndash;250 t</td>
+            <td class="py-4 pr-4 font-body text-slate2">Heavy modules, structural steel erection</td>
+          </tr>
+          <tr class="border-b border-steel-200">
+            <td class="py-4 pr-4 font-body font-medium">Rigging gear set</td>
+            <td class="py-4 pr-4">Rated to job</td>
+            <td class="py-4 pr-4 font-body text-slate2">Slings, shackles, spreader beams</td>
+          </tr>
+          <tr class="border-b border-steel-200">
+            <td class="py-4 pr-4 font-body font-medium">Load-test water bags</td>
+            <td class="py-4 pr-4">Up to 100 t</td>
+            <td class="py-4 pr-4 font-body text-slate2">Proof &amp; hydrostatic testing offshore/onshore</td>
+          </tr>
+          <tr>
+            <td class="py-4 pr-4 font-body font-medium">Access &amp; MEWP fleet</td>
+            <td class="py-4 pr-4">Up to 40 m</td>
+            <td class="py-4 pr-4 font-body text-slate2">Work-at-height, inspection access</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CALCULATOR + QUOTE FORM =================== -->
+<section id="quote" class="bg-steel-100 py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-10">
+
+    <!-- Interactive load estimate calculator -->
+    <div class="reveal bg-white rounded-lg shadow-sm p-8 md:p-10">
+      <p class="text-orange font-mono-data text-xs tracking-[0.2em] uppercase mb-3">Scoping Tool</p>
+      <h2 class="font-display font-bold text-2xl md:text-3xl text-navy-deep mb-2">Estimate required crane capacity</h2>
+      <p class="text-sm text-slate2 mb-8">A quick scoping estimate to start the conversation &mdash; not a substitute for a certified lift plan.</p>
+
+      <div class="space-y-7">
+        <div>
+          <div class="flex justify-between items-baseline mb-2">
+            <label for="loadWeight" class="text-sm font-medium text-navy-deep">Load weight</label>
+            <span id="loadWeightOutput" class="font-mono-data text-orange-dim font-semibold">12.0 t</span>
+          </div>
+          <input type="range" id="loadWeight" class="swl-range w-full" min="0.5" max="200" step="0.5" value="12">
+        </div>
+
+        <div>
+          <div class="flex justify-between items-baseline mb-2">
+            <label for="loadRadius" class="text-sm font-medium text-navy-deep">Working radius</label>
+            <span id="loadRadiusOutput" class="font-mono-data text-orange-dim font-semibold">8.0 m</span>
+          </div>
+          <input type="range" id="loadRadius" class="swl-range w-full" min="1" max="40" step="0.5" value="8">
+        </div>
+
+        <div>
+          <label for="calcServiceType" class="block text-sm font-medium text-navy-deep mb-2">Service type</label>
+          <select id="calcServiceType" class="w-full border border-steel-200 rounded px-3 py-2.5 bg-steel-100 text-sm">
+            <option value="crane-rental">Crane Rental</option>
+            <option value="rigging">Rigging</option>
+            <option value="structural-steel">Structural Steel Erection</option>
+            <option value="load-testing">Load Testing</option>
+            <option value="preventive-maintenance">Preventive Maintenance</option>
+          </select>
+        </div>
+
+        <div class="bg-navy-deep text-steel-100 rounded p-6">
+          <div class="flex items-baseline justify-between mb-1">
+            <span class="text-xs uppercase tracking-wide text-steel-200/70">Minimum rated capacity</span>
+            <span id="calcResultCapacity" class="font-mono-data text-2xl font-semibold text-orange">&mdash;</span>
+          </div>
+          <p id="calcResultTier" class="font-display text-sm mb-3">&mdash;</p>
+          <p id="calcResultNote" class="text-xs text-steel-200/60 leading-relaxed"></p>
+        </div>
+
+        <button id="calcToQuote" type="button" class="w-full border-2 border-navy-deep text-navy-deep hover:bg-navy-deep hover:text-white transition-colors font-display font-semibold py-3 rounded">
+          Send this estimate to the quote form &darr;
+        </button>
+      </div>
+    </div>
+
+    <!-- Quote / Lift Plan request form -->
+    <div class="reveal bg-navy-deep text-steel-100 rounded-lg shadow-sm p-8 md:p-10" id="quoteFormWrap">
+      <p class="text-orange font-mono-data text-xs tracking-[0.2em] uppercase mb-3">Get Started</p>
+      <h2 class="font-display font-bold text-2xl md:text-3xl mb-2">Request a Lift Plan / Quote</h2>
+      <p class="text-sm text-steel-200/70 mb-8">Tell us about the job and an ILES engineer will follow up to confirm scope.</p>
+
+      <form id="quoteForm" novalidate class="space-y-5">
+        <!-- Web3Forms: replace this placeholder with your own access key from
+             https://web3forms.com — free forever, no login, no card, no forced
+             upgrade. See README.md "Quote form backend" for the 2-minute setup. -->
+        <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY">
+        <input type="hidden" name="subject" value="New Lift Plan / Quote request — ILES website">
+        <input type="hidden" name="from_name" value="ILES Website Quote Form">
+        <!-- Honeypot spam trap: real visitors never fill this in -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+        <div>
+          <label for="name" class="block text-sm font-medium mb-1.5">Full name</label>
+          <input type="text" id="name" name="name" required class="w-full rounded px-3 py-2.5 bg-navy-mid border border-steel-100/20 text-sm placeholder:text-steel-200/40" placeholder="Kwame Mensah">
+          <p class="field-error">Please enter your name.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="phone" class="block text-sm font-medium mb-1.5">Phone number</label>
+            <input type="tel" id="phone" name="phone" required class="w-full rounded px-3 py-2.5 bg-navy-mid border border-steel-100/20 text-sm placeholder:text-steel-200/40" placeholder="+233 55 000 0000">
+            <p class="field-error">Enter a valid phone number.</p>
+          </div>
+          <div>
+            <label for="location" class="block text-sm font-medium mb-1.5">Project location</label>
+            <input type="text" id="location" name="location" required class="w-full rounded px-3 py-2.5 bg-navy-mid border border-steel-100/20 text-sm placeholder:text-steel-200/40" placeholder="Takoradi, Ghana">
+            <p class="field-error">Please enter a project location.</p>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="loadEstimate" class="block text-sm font-medium mb-1.5">Estimated weight / load</label>
+            <input type="text" id="loadEstimate" name="loadEstimate" required class="w-full rounded px-3 py-2.5 bg-navy-mid border border-steel-100/20 text-sm placeholder:text-steel-200/40" placeholder="e.g. 12 tonnes">
+            <p class="field-error">Please enter an estimated load.</p>
+          </div>
+          <div>
+            <label for="service" class="block text-sm font-medium mb-1.5">Service type</label>
+            <select id="service" name="service" required class="w-full rounded px-3 py-2.5 bg-navy-mid border border-steel-100/20 text-sm">
+              <option value="">Select a service&hellip;</option>
+              <option value="crane-rental">Crane Rental</option>
+              <option value="rigging">Rigging</option>
+              <option value="structural-steel">Structural Steel Erection</option>
+              <option value="load-testing">Load Testing</option>
+              <option value="preventive-maintenance">Preventive Maintenance</option>
+              <option value="inspection">Inspection &amp; Certification</option>
+              <option value="training">Training</option>
+              <option value="renewable">Renewable Energy</option>
+            </select>
+            <p class="field-error">Please select a service.</p>
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium mb-1.5">Project details</label>
+          <textarea id="message" name="message" rows="4" class="w-full rounded px-3 py-2.5 bg-navy-mid border border-steel-100/20 text-sm placeholder:text-steel-200/40" placeholder="Site access, timeline, lift constraints…"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-orange hover:bg-orange-dim transition-colors text-navy-deep font-display font-semibold py-3.5 rounded">
+          Submit Request
+        </button>
+        <p class="text-xs text-steel-200/50 leading-relaxed">
+          Submissions are sent via Web3Forms (free, no account required) &mdash; see
+          the README&rsquo;s &ldquo;Quote form backend&rdquo; section to drop in your own access key.
+        </p>
+      </form>
+    </div>
+
+    <div id="quoteFormSuccess" tabindex="-1" class="hidden bg-navy-deep text-steel-100 rounded-lg shadow-sm p-8 md:p-10 flex flex-col items-center justify-center text-center">
+      <svg class="w-14 h-14 text-orange mb-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <h3 class="font-display font-bold text-2xl mb-2">Request queued</h3>
+      <p class="text-steel-200/70 max-w-sm">An ILES engineer will review the details and follow up to confirm your lift plan and quote.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="bg-navy-mid text-steel-100 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-4 gap-10 mb-12">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="assets/img/iles-logo.png" alt="ILES logo" class="w-10 h-10">
+        <span class="font-display font-semibold text-lg block">INTEGRITY LIFTING &amp; ENGINEERING SOLUTIONS</span>
+      </div>
+      <p class="text-sm text-steel-200/70 max-w-sm leading-relaxed mb-5">
+        Integrated engineering, inspection, testing, training and energy services for
+        industrial clients across West Africa.
+      </p>
+      <a href="assets/brochure/ILES-Company-Brochure.pdf" download class="brochure-download inline-flex items-center gap-2 text-orange text-sm font-medium hover:underline">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+        Download the digital brochure (PDF)
+      </a>
+    </div>
+    <div>
+      <span class="font-display font-semibold block mb-3 text-sm tracking-wide">Company</span>
+      <ul class="space-y-2 text-sm text-steel-200/70">
+        <li><a href="index.html#about" class="hover:text-orange">About ILES</a></li>
+        <li><a href="services.html" class="hover:text-orange">Services</a></li>
+        <li><a href="index.html#safety" class="hover:text-orange">Safety Record</a></li>
+        <li><a href="index.html#fleet" class="hover:text-orange">Fleet / Equipment</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="font-display font-semibold block mb-3 text-sm tracking-wide">Contact</span>
+      <ul class="space-y-2 text-sm text-steel-200/70">
+        <li>6 Dorado Street, GT-371-0626, Sakumono, Ghana</li>
+        <li><a href="tel:+233534909797" class="hover:text-orange">+233 53 490 9797</a></li>
+        <li><a href="tel:+233558464980" class="hover:text-orange">+233 55 846 4980</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 border-t border-steel-100/10 pt-6 text-xs text-steel-200/50 flex flex-col sm:flex-row justify-between gap-2">
+    <span>&copy; <span class="current-year">2026</span> Integrity Lifting &amp; Engineering Solutions Ltd. All rights reserved.</span>
+    <span>Sakumono, Ghana</span>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backToTop" aria-label="Back to top" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-orange text-navy-deep shadow-lg flex items-center justify-center z-40">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<!-- Toast -->
+<div id="toast" class="fixed bottom-6 left-6 right-6 sm:right-auto sm:max-w-sm bg-navy-deep text-steel-100 text-sm px-5 py-3.5 rounded shadow-xl z-50 border-l-4 border-orange"></div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
