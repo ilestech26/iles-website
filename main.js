@@ -266,7 +266,60 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -----------------------------------------------------------
-     9. Footer year
+     10. Testimonials slideshow
+  ----------------------------------------------------------- */
+  const testimonialTrack = document.getElementById('testimonialTrack');
+  if (testimonialTrack) {
+    const slides = Array.from(testimonialTrack.querySelectorAll('.testimonial-slide'));
+    const dotsWrap = document.getElementById('testimonialDots');
+    const prevBtn = document.querySelector('.testimonial-prev');
+    const nextBtn = document.querySelector('.testimonial-next');
+    let current = 0;
+    let autoplayTimer = null;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function render() {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    }
+
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      render();
+      restartAutoplay();
+    }
+
+    function startAutoplay() {
+      autoplayTimer = setInterval(() => goTo(current + 1), 6000);
+    }
+    function restartAutoplay() {
+      clearInterval(autoplayTimer);
+      startAutoplay();
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    const slider = document.querySelector('.testimonial-slider');
+    if (slider) {
+      slider.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+      slider.addEventListener('mouseleave', restartAutoplay);
+    }
+
+    render();
+    startAutoplay();
+  }
+
+  /* -----------------------------------------------------------
+     11. Footer year
   ----------------------------------------------------------- */
   document.querySelectorAll('.current-year').forEach((el) => {
     el.textContent = new Date().getFullYear();

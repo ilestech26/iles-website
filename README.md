@@ -10,17 +10,22 @@ opening `index.html`, and deploys as-is to GitHub Pages at **zero recurring cost
 
 ## File structure
 
-Everything sits in **one flat folder — no subfolders**. This is deliberate: GitHub's
-browser upload doesn't reliably preserve nested folders when you drag files in, so a
-flat layout means there's nothing for an upload to lose.
+Everything sits at the top level in one folder, with **one exception**: a
+`services/` folder containing just one file. That folder exists so the address
+bar reads `ilesghana.com/services/` instead of `.../services.html` — GitHub Pages
+automatically serves a folder's `index.html` when you visit the folder path, no
+server configuration needed.
 
 ```
 iles-website/
 ├── index.html                    # Landing page
-├── services.html                 # Detailed service specs (all 8 service lines)
+├── services/
+│   └── index.html                # Same "Services" page, moved here so the URL
+│                                  #   reads /services/ instead of /services.html
 ├── custom.css                    # Brand tokens, gauge animation, section styling
 ├── main.js                       # Mobile nav, form validation + Web3Forms submit,
-│                                  #   load calculator, brochure download, scroll reveal
+│                                  #   load calculator, testimonials slider, brochure
+│                                  #   download, scroll reveal
 ├── iles-logo.png                 # Logo (header, footer, browser-tab icon)
 ├── warehouse-overhead-crane.jpg  # Brochure photography
 ├── worker-spraying.jpg
@@ -34,13 +39,31 @@ iles-website/
 ├── overhead-crane-hoists.jpg
 ├── scissor-lift.jpg
 ├── ILES-Company-Brochure.pdf     # Downloadable brochure (linked in nav/footer)
-├── CNAME                         # Your custom domain goes here (see Part 3 below)
+├── CNAME                         # Your custom domain (already set to ilesghana.com)
 └── README.md                     # You are here
 ```
 
-When you upload to GitHub (Part 2, Step 3), select **all of these files at once**
-and drag them in together — since there are no folders involved, there's nothing
-that can get flattened or dropped along the way.
+**Why one folder is safe now, when nested folders caused trouble before:** the
+earlier problem was *dragging local nested folders into GitHub's upload box*,
+which doesn't reliably preserve structure. The fix here uses a different,
+reliable method instead — see "Updating the Services page" below.
+
+All internal links and asset paths (`/custom.css`, `/main.js`, `/iles-logo.png`,
+etc.) now use a **leading slash**, which resolves correctly from both `/` and
+`/services/` because the site lives at your domain's root (`ilesghana.com`).
+
+### Updating the Services page
+
+Because `services/index.html` is the one file that lives inside a folder, edit
+it directly on GitHub rather than re-uploading it from your computer:
+1. In your repository, click into the `services` folder, then `index.html`.
+2. Click the pencil (✏️) icon to edit in the browser, make your change, commit.
+
+If you ever need to recreate this folder from scratch (e.g. starting a fresh
+repo), the safest way is **not** drag-and-drop — use **Add file → Create new
+file**, and type `services/index.html` directly into the filename box. GitHub
+creates the folder for you as part of typing that path, which sidesteps the
+drag-and-drop folder problem entirely.
 
 ## Running it locally
 
@@ -55,9 +78,14 @@ python3 -m http.server 8080
 
 # Part 1 — Quote form backend (free, forever, no card)
 
-The "Request a Lift Plan / Quote" form is already wired to **[Web3Forms](https://web3forms.com)**
-in the code — you only need to drop in your own access key. Why Web3Forms for a
-startup:
+**Status: already connected.** The quote form is live using your access key
+(`info@ilesghana.com` via Web3Forms) — quote requests, including the customer's
+own email address so you can reply directly, land in that inbox already. The
+steps below are kept for reference in case you ever need to reconnect it (e.g.
+a new key, a different destination email).
+
+The "Request a Lift Plan / Quote" form is wired to **[Web3Forms](https://web3forms.com)**
+in the code. Why Web3Forms for a startup:
 
 | | Web3Forms Free | Formspree Free |
 |---|---|---|
@@ -72,20 +100,18 @@ there's no subscription to accidentally trigger. 250 submissions/month is genero
 headroom for a new company site; if you ever outgrow it, it's a one-line change (see
 below), not a rebuild.
 
-### Getting your free access key (2 minutes)
+### Getting a new free access key, if you ever need one
 
 1. Go to **[web3forms.com](https://web3forms.com)**.
-2. Enter the email address where you want quote requests delivered (e.g.
-   `info@ilesghana.com` once your domain email is live — see Part 3) and click
+2. Enter the email address where you want quote requests delivered and click
    **Create Access Key**.
 3. Web3Forms emails you a key that looks like `a1b2c3d4-...`. No password, no
    dashboard login needed for the free tier.
 4. Open `index.html`, find this line near the top of the quote form:
    ```html
-   <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY">
+   <input type="hidden" name="access_key" value="5a131210-293c-429b-ac6b-2591496f0689">
    ```
-5. Replace `YOUR-WEB3FORMS-ACCESS-KEY` with the key from your email. Save, commit,
-   push — the form is live.
+5. Replace the value with your new key. Save, commit, push — the form is live.
 
 That's the entire setup. `main.js` already does the rest: it validates the fields,
 `POST`s them to Web3Forms as JSON, shows the "Request queued" success state, and
@@ -118,23 +144,21 @@ on file, and no usage-based billing surprise for a low-traffic marketing site.
 
 ### Step 3 — Get your site onto GitHub
 
-You don't need to touch a terminal to do this. Pick whichever feels easiest:
+*(Your site is already live, so you likely won't repeat this step — it's kept
+here as reference in case you ever rebuild the repository from scratch.)*
 
 **Option A — Drag and drop in the browser (simplest, no installs at all)**
 1. On your new repository's page, click **uploading an existing file** (or
    **Add file → Upload files** from the top-right menu).
-2. Open the `iles-website` folder on your computer, press **Ctrl/Cmd+A** to
-   select *all* the files in it (every `.html`, `.css`, `.js`, `.jpg`, `.png`,
-   `.pdf`, plus `CNAME` and `README.md`), and drag them all into the GitHub
-   upload box in one go.
-   - There are no subfolders in this project, so there's nothing to flatten or
-     lose — every file should land directly at the top level of the repository.
-   - Double-check the count before committing: this project has around 17
-     files. If your repository ends up with far fewer than that after
-     uploading, some files didn't make it — repeat the upload for the missing
-     ones (see the "If something's still missing" note below).
-3. Scroll down, add a commit message like "Initial upload", and click
-   **Commit changes**.
+2. Select every top-level file (every `.html` at the root, `.css`, `.js`,
+   `.jpg`, `.png`, `.pdf`, plus `CNAME` and `README.md`) and drag them all into
+   the GitHub upload box in one go, then commit.
+3. **Separately**, create the one subfolder this project has: use **Add file →
+   Create new file**, type `services/index.html` into the filename box (typing
+   the slash makes GitHub create the `services` folder for you — no
+   drag-and-drop involved), paste in the Services page content, and commit.
+   This sidesteps the folder-flattening problem entirely, since nothing is
+   dragged from a local nested folder.
 4. That's it — the files are live in your repository, ready for Step 4 below.
 
 **Option B — GitHub Desktop (a bit more convenient for future edits)**
@@ -144,7 +168,8 @@ You don't need to touch a terminal to do this. Pick whichever feels easiest:
    right there.
 3. Type a summary (e.g. "Initial commit"), click **Commit to main**, then
    **Publish repository** (keep it public, since Pages requires that on a free
-   account).
+   account). GitHub Desktop preserves the `services/` subfolder correctly,
+   since it works from the actual folder on disk rather than a browser drag.
 
 **Option C — Git command line (for anyone already comfortable with a terminal)**
 ```bash
@@ -158,10 +183,10 @@ git push -u origin main
 ```
 
 **If something's still missing after uploading:** open your repository on
-GitHub.com and count the files listed. This project has 17 files total, all at
-the top level (no folders). If you see noticeably fewer, some didn't upload —
-just repeat **Add file → Upload files** and drag in whatever's missing; GitHub
-adds to what's already there, it doesn't require starting over.
+GitHub.com and check for both the top-level files and the `services` folder
+containing `index.html`. If either is incomplete, repeat the relevant part of
+Step 3 above — GitHub adds to what's already there, it doesn't require
+starting over.
 
 ### Step 4 — Turn on GitHub Pages
 1. On your repository page, go to **Settings → Pages** (left sidebar).
@@ -254,7 +279,7 @@ Forever Free plan** gives you up to 5 addresses (e.g. `info@ilesghana.com`,
    `@ilesghana.com` mail to Zoho's inbox instead of nowhere).
 4. Create your mailboxes (e.g. `info@ilesghana.com`) in the Zoho admin console.
 5. Update the access-key delivery email in Web3Forms (Part 1) and the contact
-   links in `index.html`/`services.html` to use your new address once it's live.
+   links in `index.html`/`services/index.html` to use your new address once it's live.
 
 **Worth knowing about Zoho's free plan:** webmail (browser-based inbox) works
 immediately at no cost; it doesn't include IMAP/POP for hooking the inbox up to the
@@ -282,3 +307,11 @@ the time of writing, but confirm at signup.
   referencing the load-chart language lifting engineers use day to day.
 - All interactive controls have visible keyboard focus states, and animations respect
   `prefers-reduced-motion`.
+- **Floating WhatsApp button**: bottom-left on every page, opens a chat to
+  +233 55 846 4980 with a pre-filled greeting. To change the number, search
+  `main.js` and both HTML files for `233558464980` and replace it everywhere it
+  appears.
+- **Testimonials slideshow**: the four quotes on the homepage are placeholders
+  (clearly marked in `index.html` with an HTML comment) — swap in real client
+  feedback as it comes in. Each quote is a `<blockquote class="testimonial-slide">`;
+  add or remove blocks and the dots/autoplay adjust automatically.
